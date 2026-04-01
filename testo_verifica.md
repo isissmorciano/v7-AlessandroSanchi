@@ -99,11 +99,11 @@ INSERT INTO piatti (categoria_id, nome, prezzo) VALUES (4, 'Tiramisu', 6.99);
    - `crea_piatto.html` → form con select categoria, input nome/prezzo
 
 **Checklist:**
-- [ ] Due repository creati con funzioni CRUD
-- [ ] 6 route implementate
-- [ ] 4 template creati
-- [ ] Navigazione funzionante tra categorie e dettagli
-- [ ] Creazione di categorie e piatti operativa
+- [x] Due repository creati con funzioni CRUD
+- [x] 6 route implementate
+- [x] 4 template creati
+- [x] Navigazione funzionante tra categorie e dettagli
+- [x] Creazione di categorie e piatti operativa
 
 ---
 
@@ -127,11 +127,11 @@ INSERT INTO piatti (categoria_id, nome, prezzo) VALUES (4, 'Tiramisu', 6.99);
   - Link al dettaglio categoria per ogni risultato
 
 **Checklist:**
-- [ ] Funzione `find_piatti_by_name()` in piatto_repository
-- [ ] Route GET `/ricerca` (form vuoto)
-- [ ] Route POST `/ricerca` (risultati)
-- [ ] Template `ricerca.html` creato
-- [ ] Ricerca case-insensitive funzionante
+- [x] Funzione `find_piatti_by_name()` in piatto_repository
+- [x] Route GET `/ricerca` (form vuoto)
+- [x] Route POST `/ricerca` (risultati)
+- [x] Template `ricerca.html` creato
+- [x] Ricerca case-insensitive funzionante
 
 ---
 

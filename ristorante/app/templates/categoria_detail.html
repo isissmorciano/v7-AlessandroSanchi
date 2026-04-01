@@ -1,7 +1,7 @@
 
 {% extends 'base.html' %}
 
-{% block title %}{{ category['nome'] }} - Negozio Online{% endblock %}
+{% block title %}{{ category['nome'] }}{% endblock %}
 
 {% block content %}
 <a href="/" style="font-size:0.9rem;color:#636e72;">← Torna alle categorie</a>
@@ -30,14 +30,14 @@
     {{ products|length }} piatt{{ 'o' if products|length == 1 else '' }}{{ 'i' if products|length != 1 else '' }} in questa categoria
 </p>
 {% else %}
-<div class="card">
+
     <p class="empty">Nessun piatto in questa categoria.
         <a href="/crea_piatto">Aggiungi un piatto</a>
     </p>
-</div>
+
 {% endif %}
 
-<div style="margin-top:1rem;">
+
     <a href="/crea_piatto" class="btn btn-primary">+ Aggiungi piatto</a>
-</div>
+
 {% endblock %}

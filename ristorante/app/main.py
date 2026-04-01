@@ -55,5 +55,5 @@ def ricerca():
         search_term = request.form.get('q', '').strip()
         searched = True
         if search_term:
-            results = piatto_repository.find_products_by_name(search_term)
+            results = piatto_repository.find_piatti_by_name(search_term)
     return render_template('ricerca.html', results=results, search_term=search_term, searched=searched)

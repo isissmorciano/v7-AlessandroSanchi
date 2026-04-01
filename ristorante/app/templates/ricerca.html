@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Ricerca Piatti - Negozio Online{% endblock %}
+{% block title %}Ricerca Piatti{% endblock %}
 
 {% block content %}
 <h1>🔍 Ricerca Piatti</h1>
@@ -8,9 +8,8 @@
 <div class="card" style="max-width:560px;margin-bottom:1.5rem;">
     <form method="POST" action="/ricerca">
         <label for="q">Cerca per nome del piatto</label>
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;">
             <input type="text" id="q" name="q"
-                   placeholder="Es. Laptop, Python..."
+                   placeholder="Es. branzino, bruschetta ..."
                    value="{{ search_term }}"
                    style="margin-bottom:0;" autofocus>
             <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Cerca</button>
