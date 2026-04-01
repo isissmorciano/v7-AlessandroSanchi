@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Ristorante{% endblock %}</title>
     <style>
         body {
             font-family: sans-serif;
@@ -145,7 +144,6 @@
         <a href="{{ url_for('main.ricerca') }}">🔍 Ricerca</a>
     </nav>
 
-    <h1>{% block title %}Ristorante{% endblock %}</h1>
 
     {% with messages = get_flashed_messages() %}
     {% if messages %}

@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+
+{% block title %}{{ category['nome'] }} - Negozio Online{% endblock %}
+
+{% block content %}
+<a href="/" style="font-size:0.9rem;color:#636e72;">← Torna alle categorie</a>
+<h1 style="margin-top:0.8rem;">🏷️ {{ category['nome'] }}</h1>
+
+{% if products %}
+<div class="card">
+    <table>
+        <thead>
+            <tr>
+                <th>Piatto</th>
+                <th style="text-align:right;">Prezzo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in products %}
+            <tr>
+                <td>{{ p['nome'] }}</td>
+                <td style="text-align:right;" class="price">€ {{ "%.2f"|format(p['prezzo']) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<p style="font-size:0.9rem;color:#636e72;">
+    {{ products|length }} piatt{{ 'o' if products|length == 1 else '' }}{{ 'i' if products|length != 1 else '' }} in questa categoria
+</p>
+{% else %}
+<div class="card">
+    <p class="empty">Nessun piatto in questa categoria.
+        <a href="/crea_piatto">Aggiungi un piatto</a>
+    </p>
+</div>
+{% endif %}
+
+<div style="margin-top:1rem;">
+    <a href="/crea_piatto" class="btn btn-primary">+ Aggiungi piatto</a>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Nuova Categoria - Negozio Online{% endblock %}
+
+{% block content %}
+<a href="/" style="font-size:0.9rem;color:#636e72;">← Torna alle categorie</a>
+<h1 style="margin-top:0.8rem;">➕ Nuova Categoria</h1>
+
+<div class="card" style="max-width:480px;">
+    <form method="POST" action="/crea_categoria">
+        <label for="nome">Nome Categoria</label>
+        <input type="text" id="nome" name="nome"
+               placeholder="Es. Elettronica" required autofocus>
+        <button type="submit" class="btn btn-primary">Crea Categoria</button>
+    </form>
+</div>
+{% endblock %}

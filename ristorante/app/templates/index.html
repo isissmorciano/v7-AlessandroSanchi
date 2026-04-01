@@ -1,0 +1,86 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Categorie - Negozio Online{% endblock %}
+
+{% block content %}
+<h1> Categorie</h1>
+
+{% if categories %}
+<div class="card">
+    <table>
+        <thead>
+            <tr>
+                <th>Nome Categoria</th>
+                <th style="text-align:right;">Azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cat in categories %}
+            <tr>
+                <td><a href="/categoria/{{ cat['id'] }}">{{ cat['nome'] }}</a></td>
+                <td style="text-align:right;">
+                    <a href="/categoria/{{ cat['id'] }}" class="btn btn-secondary"
+                       style="font-size:0.8rem;padding:0.3rem 0.8rem;">Vedi piatti →</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div class="card">
+    <p class="empty">Nessuna categoria presente. <a href="/crea_categoria">Crea la prima!</a></p>
+</div>
+{% endif %}
+
+<div style="margin-top:1rem;display:flex;gap:0.8rem;">
+    <a href="/crea_categoria" class="btn btn-primary">+ Nuova Categoria</a>
+    <a href="/crea_piatto" class="btn btn-secondary">+ Nuovo piatto</a>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+<a href="/" style="font-size:0.9rem;color:#636e72;">← Torna alle categorie</a>
+<h1 style="margin-top:0.8rem;">🏷️ {{ category['nome'] }}</h1>
+
+{% if products %}
+<div class="card">
+    <table>
+        <thead>
+            <tr>
+                <th>Piatto</th>
+                <th style="text-align:right;">Prezzo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in products %}
+            <tr>
+                <td>{{ p['nome'] }}</td>
+                <td style="text-align:right;" class="price">€ {{ "%.2f"|format(p['prezzo']) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<p style="font-size:0.9rem;color:#636e72;">
+    {{ products|length }} piatt{{ 'o' if products|length == 1 else '' }}{{ 'i' if products|length != 1 else '' }} in questa categoria
+</p>
+{% else %}
+<div class="card">
+    <p class="empty">Nessun piatto in questa categoria.
+        <a href="/crea_piatto">Aggiungi un piatto</a>
+    </p>
+</div>
+{% endif %}
+
+<div style="margin-top:1rem;">
+    <a href="/crea_piatto" class="btn btn-primary">+ Aggiungi piatto</a>
+</div>
